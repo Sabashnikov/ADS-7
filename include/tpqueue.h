@@ -15,15 +15,6 @@ class TPQueue {
 
  public:
   TPQueue() : head(nullptr), tail(nullptr) {}
-  const T pop() {
-    if (head) {
-      Item* temp = head;
-      T result = temp->data;
-      head = head->next;
-      delete temp;
-      return result;
-    }
-  }
   void push(const T& val) {
     int pr = val.prior;
     Item* temp = new Item;
@@ -50,6 +41,15 @@ class TPQueue {
     if (temp->next == nullptr)
       tail = temp;
   }
+ const T pop() {
+  if (head) {
+   Item* temp = head;
+   T result = temp->data;
+   head = head->next;
+   delete temp;
+   return result;
+  }
+ }
 };
 
 struct SYM {
