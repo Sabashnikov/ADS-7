@@ -33,7 +33,7 @@ class TPQueue {
       return;
     }
     Item* end = head;
-    for (; count > 1; count--)
+    for (int k = count-1; k > 0; k--)
       if (end->next != nullptr && end->next->data.prior >= pr)
         end = end->next;
     temp->next = end->next;
