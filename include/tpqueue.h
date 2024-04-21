@@ -15,7 +15,7 @@ class TPQueue {
 
  public:
   TPQueue() : head(nullptr), tail(nullptr) {}
-  T pop() {
+  const T pop() {
     if (head) {
       Item* temp = head;
       T result = temp->data;
